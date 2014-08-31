@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 31-08-2014 a las 02:30:39
+-- Tiempo de generación: 31-08-2014 a las 22:02:15
 -- Versión del servidor: 5.6.16
 -- Versión de PHP: 5.5.11
 
@@ -39,6 +39,7 @@ CREATE TABLE IF NOT EXISTS `estudiantes` (
 --
 
 INSERT INTO `estudiantes` (`codigo`, `nombre`, `apellido`, `correo`) VALUES
+('09234586', 'Luis', 'Alnvarez', 'kasdsd@gmail.com'),
 ('10234576', 'Juan', 'Ramón', 'senorTengoTalento@gmail.com'),
 ('11104017', 'Kammil', 'Carranza', 'kaescavi94@gmail.com'),
 ('11123849', 'Carlos', 'Garcia', 'jajiffn@gmail.com'),
@@ -47,7 +48,8 @@ INSERT INTO `estudiantes` (`codigo`, `nombre`, `apellido`, `correo`) VALUES
 ('11212023', 'Natalia', 'Ayala Pèrez', 'natalia.ayala@correo.icesi.edu.co'),
 ('11236578', 'Pepito', 'Perez', 'adkad@gmail.com'),
 ('12112019', 'Andres', 'Bonilla', 'leecher01@gmail.com'),
-('12112021', 'Karina', 'Rodriguez', 'picadasExpress12@gmail.com');
+('12112021', 'Karina', 'Rodriguez', 'picadasExpress12@gmail.com'),
+('12114056', 'Pepe', 'Ruales', 'adnjasd@gmail.com');
 
 -- --------------------------------------------------------
 

@@ -4,6 +4,9 @@
 */
 
 include_once("includes/database.php");
+
+/*Esta página se encarga de mostrar todas las notas, junto con su nombre y porcentajes.
+*/
 $sql= "SELECT * FROM estudiantesWeb.notas ORDER BY idNota";
 $result = mysqli_query($con,$sql);
 if($result == false)

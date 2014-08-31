@@ -14,6 +14,9 @@
 */
 
 include_once("includes/database.php");
+
+/*Mediante este query planeo seleccionar los datos de los estudiantes (Código, Nombre, apellido, correo). Los cuales me 
+servirán para encontrar las notas de cada uno de ellos*/
 $sql= " SELECT estudiantes.nombre AS nombre,  estudiantes.apellido AS apellido, estudiantes.codigo AS codigo  FROM estudiantesWeb.notasdeestudiantes JOIN estudiantesWeb.estudiantes ON notasdeestudiantes.codigoEstudiante=estudiantes.codigo GROUP BY estudiantes.nombre";
 $result = mysqli_query($con,$sql);
 
@@ -27,7 +30,9 @@ if($result == false)
 		echo "<p>No current databases</p>";
 	} else
 	{
-
+		/*Creo una tabla para almacenar los valores a mostrar, adicionalmente se hace un query en esta sección
+		para que la vista de los nombres de las tareas sea dinámica en relación a la información mostrada
+		en la base de datos*/
 		echo"<table border='1' style='width:300px'>";
 		echo"<th>Nombre</th>";
 		$sqlNombreNotas="SELECT * FROM estudiantesWeb.notas";
@@ -36,7 +41,10 @@ if($result == false)
 			echo"<th>".$notasConNombre["nombre"]."</th>";
 		}
 		
-
+		/*Mediante el while muestro la información del estudiante. Luego realizo una repetitiva anidada que se encarga
+		de tener un query que analiza todas las notas, para despues mediante un condicional me muestra sólo las notas
+		que coincidan con el codigo del estudiante que está en la posición del arreglo. Además envía el código del estudiante
+		a mosttrarNota, para obtener las notas de ese estudiante*/
 		while($row = mysqli_fetch_array($result)) {
 			echo"<tr>";
 			echo"<td>"."<a href='includes/mostrarNota.php?codigo=".$row["codigo"]."'>".$row["nombre"]."  ".$row["apellido"]."</a> "."</td>";
@@ -47,7 +55,7 @@ if($result == false)
 				if($row["codigo"]==$datosNotas["codigo"]){
 					echo"<td>".$datosNotas["valorNota"]."</td>";
 				}
-  //print(implode(" , ",$));
+
 			}
 			echo"</tr>";
 		}

@@ -9,9 +9,12 @@
 
 	<?php
 	include_once("database.php");
+	/*En esta sección me encargo de recoger el código que se le es pasado desde estudiantes o desde notasdeestudiantes y almacenarlo
+	dentro de una variable. La cual entra a restringir el mismo query que me seleccionaba todos los estudiantes con por lo menos
+	una nota en la página notasdeestudiantes, esta restricción consiste en seleccionar sólo el estudiante que tenga el mimso
+	codigo del que se le hizo click. ASí en caso de que este estudiante no tenga notas, me mostrará un mensaje de error*/
 	if(isset($_GET["codigo"])){
 		$codigo = $_GET["codigo"];
-
 		$sql= " SELECT estudiantes.nombre AS nombre,  estudiantes.apellido AS apellido, estudiantes.codigo AS codigo  FROM estudiantesWeb.notasdeestudiantes JOIN estudiantesWeb.estudiantes ON notasdeestudiantes.codigoEstudiante=estudiantes.codigo WHERE estudiantes.codigo='$codigo' GROUP BY estudiantes.nombre";
 		$result = mysqli_query($con,$sql);
 
@@ -22,6 +25,7 @@
 
 		else{
 
+			/*Las siguientes secciones son identicas a la pagina de notasdeestudiantes*/
 			echo"<table border='1' style='width:300px'>";
 			echo"<th>Codigo</th>";
 			echo"<th>Nombre</th>";
