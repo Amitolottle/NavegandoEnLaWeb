@@ -1,0 +1,183 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-image: url("../images/fondo.png");
+}
+
+@font-face{
+	font-family: infinity;
+	src: url(Fuentes/infinity.ttf);
+}
+
+@font-face{
+	font-family: intro;
+	src: url(Fuentes/intro.otf);
+}
+
+h1{
+	font-family: intro;
+}
+
+h3{
+	font-family: infinity;
+}
+
+#navegacion{
+	background: #fafafa;
+	margin-bottom: 0%;
+	padding-top: 1%;
+	position: relative;
+	z-index: 2;
+}
+
+#navegacion h1{
+	font-size: 2em;
+	margin-top: 9%;
+}
+
+#navegacion a{
+	display: inline-block;
+	font-family: infinity;
+	font-size: 2em;
+	margin-right: 10%;
+	margin-top: 6%;
+	position: relative;
+	color: rgba(23,23,23,0.5);
+	text-decoration: none;
+}
+
+#navegacion .resaltado {
+	color: #232323;
+}
+
+
+#navegacion figure{
+	margin-bottom: 15%;
+}
+
+
+#circulo{
+border-radius: 50%;
+background-color: #fafafa;
+height: 120px;
+width: 120px;
+margin-left: -10%;
+margin-top: -35%;
+z-index: -2;
+}
+
+#circulo figure{
+	padding-top: 49%;
+    padding-left: 11%;
+    display: inline-block;
+}
+
+#circulo h3{
+	font-family: intro;
+	display: inline-block;
+	margin-top: 37%;
+	margin-left: 5%;
+	position: absolute;
+}
+
+hr{
+	border-top: 1px solid rgba(23,23,23,0.5);
+	color: rgba(23,23,23,0.5);
+	height: 2px;
+	margin: 0;
+}
+
+section{
+	margin-bottom: 9%;
+}
+
+section h1{
+	color: #fafafa;
+	font-family: intro;
+	font-size: 2em;
+	margin-bottom: 3%;
+	margin-left: 1%;
+}
+
+section a{
+	text-decoration: none;
+}
+
+section h2{
+	color: #fafafa;
+	font-family: Lobster, infinity;
+	text-align: center;
+}
+
+section  h3{
+	color: #fafafa;
+	display: inline-block;
+	font-size: 1.2em;
+	margin-bottom: 1%;
+	margin-left: 4%;
+	margin-top: 1.4%;
+	position: relative;
+	text-align: center;
+	
+}
+
+.productoImg{
+background-color: rgba(186,91,91,0.7);
+border-radius: 50%;
+height: 15%;
+margin-bottom: 8%;
+margin-left: 19%;
+width: 64%;
+}
+
+.rojo{
+	background-color: rgba(186,91,91,0.7);
+}
+
+.azul{
+	background-color: rgba(78,114,186,0.7);
+}
+
+.verde{
+	background-color: rgba(133,186,103,0.7);
+}
+
+.rosa{
+	background-color: rgba(186,99,179,0.7);
+}
+
+.productoImg figure{
+padding-bottom: 9%;
+}
+
+.footerProc  h3{
+	color: #fafafa;
+	display: inline-block;
+	font-size: 1.2em;
+	margin-bottom: 1%;
+	margin-left: 4%;
+	margin-top: 1.4%;
+	position: relative;
+	text-align: center;
+	
+}
+
+.footerProc figure{
+	display: inline-block;
+	margin-left: 5%;
+	padding: 0;
+	padding-bottom: 0.5%;
+}
+
+
+footer h1{
+color: #fafafa;
+font-family: intro;
+font-size: 2em;
+margin-bottom: 3%;
+margin-left: 1%;
+text-align: center;
+}
