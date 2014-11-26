@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <style>
+    body {
+      padding-top: 50px;
+      padding-bottom: 20px;
+    }
+  </style>
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+<body onload="initialize()">
+<section id="cajaSoltar">
+  <canvas id="lienzo" width="500" height="500"></canvas>
+</section>
+
+<section id="cajaImagenes">
+  <img id="imagen1" src="https://lh3.googleusercontent.com/-LJybnLRdVjU/AAAAAAAAAAI/AAAAAAAAAB8/mO6H4bdzpvE/photo.jpg">
+  <img id="imagen2" src="http://i.imgur.com/CmuPtFw.gif">
+</section>
+
+<section id="ubicacion">
+  <button id="obtener">Obtener Mi Loc</button>
+</section>
+<div id="map_canvas" style="width:500px; height:500px"></div>
+ <script src="js/vendor/jquery-2.1.1.min.js"></script>
+
+ <script src="js/vendor/bootstrap.min.js"></script>
+
+ <script src="js/main.js"></script>
+
+  <script type="text/javascript"
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCaab8OrK_KEDS9LQOaEpxRIKew75pzDMw&sensor=true">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        
+        var locations = [
+          ['La concha de la lora', 47.06976, 15.43154, 1],
+          ['Stadtbibliothek dieMediathek', 47.06975, 15.43116, 2],
+          ['Stadtbibliothek Gösting', 47.09399, 15.40548, 3],
+          ['Stadtbibliothek Graz West', 47.06993, 15.40727, 4],
+          ['Stadtbibliothek Graz Ost', 47.06934, 15.45888, 5],
+          ['Stadtbibliothek Graz Süd', 47.04572, 15.43234, 6],
+          ['Stadtbibliothek Graz Nord', 47.08350, 15.43212, 7],
+          ['Stadtbibliothek Andritz', 47.10280, 15.42137, 8]
+        ];
+
+
+        var mapOptions = {
+          center: new google.maps.LatLng(3.425675924511549, -76.55270937499995),
+          zoom: 13,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+        var map = new google.maps.Map(document.getElementById("map_canvas"),
+            mapOptions);
+
+        var infowindow = new google.maps.InfoWindow();
+
+        var marker, i;
+
+        for (i = 0; i < locations.length; i++) {
+          marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map
+          });
+
+          google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+              infowindow.setContent(locations[i][0]);
+              infowindow.open(map, marker);
+            }
+          })(marker, i));
+        }
+      }
+    </script>
+
+ <script>
+  console.log("hola mundito :3");
+</script>
+</body>
+</html>

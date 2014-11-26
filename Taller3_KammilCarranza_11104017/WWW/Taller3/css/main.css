@@ -1,0 +1,64 @@
+body{
+	padding-top: 0px;
+}
+
+@font-face{
+	font-family: Roboto;
+	src: url(../fonts/Roboto-Light.ttf);
+}
+
+h4{
+	font-family: 'Roboto';
+}
+#cajaSoltar{
+	border: 2px solid #999999;
+	float: left;
+	width: 107.1%;
+}
+
+#cajaImagenes{
+	float: left;
+	margin: 10px;
+}
+
+#cajaImagenes>img{
+	float: left;
+	padding: 5px;
+	width: 50%;
+}
+
+#map_canvas{
+	margin-left: -1.7%;
+	width: 102%;
+
+}
+
+#lienzo{
+	width: 100%;
+}
+
+#texto{
+	color: rgba(23,23,23,.3);
+	margin-left: 32%;
+	margin-top: 145%;
+	position: absolute;
+}
+
+#boton{
+	margin-top: -35%;
+	z-index: 4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
